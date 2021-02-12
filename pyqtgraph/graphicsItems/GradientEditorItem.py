@@ -62,7 +62,7 @@ class TickSliderItem(GraphicsWidget):
         ==============  =================================================================================
         """
         ## public
-        GraphicsWidget.__init__(self)
+        GraphicsWidget.__init__(self, parent=kargs.get("parent", None))
         self.orientation = orientation
         self.length = 100
         self.tickSize = 15
@@ -430,7 +430,6 @@ class GradientEditorItem(TickSliderItem):
         self.colorMode = 'rgb'
         
         TickSliderItem.__init__(self, *args, **kargs)
-        
         self.colorDialog = QtGui.QColorDialog()
         self.colorDialog.setOption(QtGui.QColorDialog.ShowAlphaChannel, True)
         self.colorDialog.setOption(QtGui.QColorDialog.DontUseNativeDialog, True)
